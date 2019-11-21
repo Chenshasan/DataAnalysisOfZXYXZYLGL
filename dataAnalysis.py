@@ -12,6 +12,9 @@ import seaborn as sns
 # plt.plot([1,2,3,4])
 # plt.show()
 # 暂时没有冗余数据
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+
 CATEGORICAL_FEATURES=["day","hour","A1","B1","B3","D1","D2","E2","E3","E4","E5","E6","E7","E8","E9","E10","E11","E12","E13","E15","E16","E17","E18","E19","E21","E22","E23","E24","E25","E26","E27","E28","E29"]
 NUMERICAL_FEATURES=["A2","A3","B2","C1","C2","C3","E1","E14","E20"]
 data=pd.read_csv(r"./train.csv")
@@ -54,7 +57,9 @@ def Data_exploration(data,categorical_features,numerical_features,max_feature=10
 Data_exploration(data,CATEGORICAL_FEATURES,NUMERICAL_FEATURES)
 
 
-
+"""
+Step4 :创建模型
+"""
 lr = LogisticRegression()
 gbdt=GradientBoostingClassifier()
 xgb=XGBClassifier()
